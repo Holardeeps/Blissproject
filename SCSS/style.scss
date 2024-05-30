@@ -1,0 +1,435 @@
+// Google fonts rale
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@500;600;700&display=swap');
+
+// Base Styles
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Raleway',sans-serif;
+    overflow-x: hidden;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+img,
+video{
+    max-width: 100%;
+    height: auto;
+}
+
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    padding: .8rem 1.2rem;
+    border-radius: 5rem;
+    font-size: 1.7rem;
+    color: #333;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    transition: all .3s linear;
+
+    &:hover{
+        transform: scale(1.1);
+        background-color: rgb(231, 127, 127);
+    }
+}
+
+.container {
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+
+    .header{
+        font-size: 3.3rem;
+        text-align: center;
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-transform: uppercase;
+        padding: 1rem;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    // gap: 1.5rem;
+}
+
+// .nav {
+//     -webkit-backdrop-filter: blur(8px);
+//     backdrop-filter: blur(8px);
+// }
+// .blurred {
+//     -webkit-filter: blur(5px);
+//     -moz-filter: blur(5px);
+//     -o-filter: blur(5px);
+//     -ms-filter: blur(5px);
+//     filter: blur(5px);
+//     background-color: #eee;
+// }
+
+
+
+// Nav
+.nav {
+    display: flex;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    height: 4.5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    padding: 3rem;
+    position: fixed;
+    width: 100%;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    
+
+    .l-nav {
+        // position: relative;
+
+        .l-list {
+            display: flex;
+        }
+        .l-item{
+            padding: 1.2rem;
+            font-size: 1.2rem;
+
+            .menu-item{
+                position: relative;
+            }
+
+            .sub-menu.show-menu{
+                left: 0;
+            }
+
+            .sub-menu{
+                display: block;
+                // position: absolute;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                height: 100vh;
+                width: 35vw;
+                background-color: #fff;
+                border: 1px solid black;
+                opacity: .9;
+                transition: .7s ease-in-out;
+
+                
+
+                .menu-list{
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 2rem;
+                    padding: 3rem;
+                    padding-top: 5rem;
+
+                    li{
+                        padding: 1rem;
+
+                        a{
+                            font-size: 1.5rem;
+
+                            &:hover{
+                                color: crimson;
+                            }
+                        }
+                    }
+
+                    .close{
+                        color: crimson;
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .r-nav {
+        padding-right: 2rem;
+
+        .r-list {
+            display: flex;
+        }
+        .r-item{
+            padding: 1.2rem;
+            padding-left: 4rem;
+            font-size: 1.2rem;
+        }
+    }
+
+    .header-text{
+        color: black;
+        font-size: 1.6rem;
+
+        span{
+            color: crimson;
+            text-transform: lowercase;
+        }
+    }
+}
+
+// Show Menu
+.show-menu{
+    left: 0;
+}
+
+// main{
+//     padding-top: 6rem;
+// }
+
+// Home Section
+
+main{
+    height: 100vh;
+    // background-color: red;
+    background: url(/ASSETS/IMG/home.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    // background-attachment: fixed;
+    padding-top: 9rem;
+    
+}
+
+.home{
+
+    .home-container{
+        margin-left: 50%;
+        margin-top: 17%;
+        position: relative;
+        // padding: 3rem;
+        animation: scaleUpDown 3s linear infinite;
+
+        h2{
+            font-size: 4rem;
+            font-weight: bolder;
+            color: #333;
+            font-optical-sizing: auto;
+            background-color: #fff;
+            font-family: "Orbitron", sans-serif;
+            border-radius: 50px;
+            border-bottom-left-radius: 0px;
+            line-height: 5.5rem;
+            padding-left: 2rem;
+
+            span{
+                color: #bab631;
+            }
+        }
+
+        .btn-home{
+            background-color: crimson;
+            color: #fff;
+            box-shadow: 8px 0px 0px #43d892;
+            font-size: 1.7rem;
+            padding: 1.2rem;
+            border-bottom-left-radius: 30px;
+        }
+    }
+}
+
+
+// Categories
+
+.category{
+    // background-color: crimson;
+
+    &-card{
+        position: relative;
+        width: 100%;
+        // height: 700px;
+
+        img{
+            height: 100%;
+            // width: 100%;
+            transition: .3s ease;
+
+            &:hover{
+                transform: scale(1.03);
+            }
+        }
+    }
+
+    &-info{
+        position: absolute;
+        bottom: 10rem;
+        left: 26%;
+        justify-content: center;
+
+        .btn{
+            font-size: 1.2rem;
+        }
+    }
+    &-title{
+        color: #fff;
+        text-align: center;
+    }
+}
+
+
+
+// Gallery
+.gallery{
+    padding: 5%;
+    padding: 5%;
+    padding-top: 5rem;
+    background-color: aliceblue;
+
+    .section-title{
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+    &-container{
+        display: flex;
+        position: relative;
+        margin-top: 5rem;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &-card{
+        // flex: 1;
+        background: #fff;
+        border-radius: .5rem;
+        border: .3rem solid rgba(219, 37, 37, 0.2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        margin: 1.5rem;
+        // padding: 3rem 2rem;
+        text-align: center;
+        transition: .3s linear;
+
+        img{
+            height: 20rem;
+            width: 100%;
+            transition: .3s ease;
+
+            &:hover{
+                transform: scale(.9);
+            }
+        }
+
+        h2{
+            font-size: 2rem;
+            color: #333;
+            padding-top: .8rem;
+        }
+        p{
+            font-size: 2rem;
+            color: #333;
+            padding: .7rem 0;
+        }
+    }
+}
+
+
+// Arrivals Section
+.arrivals{
+    background-color: #fff;
+    margin-top: 2rem;
+    padding-top: 2rem;
+
+    .section-title{
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #333;
+        // border: 3px solid red;
+    }
+
+    &-container{
+        display: flex;
+        margin-top: 3rem;
+        padding-top: 1rem;
+        padding: 2rem;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .items{
+            margin-left: 1.3rem;
+            border: .2rem solid crimson;
+            border-radius: 3rem;
+            margin-top: 1rem;
+            position: relative;
+            width: 300px;
+            overflow: hidden;
+
+            &:hover .bth {
+                bottom: 30%;
+            }
+
+            img{
+                width: 100%;
+            }
+
+            .info{
+                text-align: center;
+                padding-top: 1rem;
+            }
+
+            .bth{
+                position: absolute;
+                bottom: -100%;
+                left: 30%;
+                padding: .5rem;
+                font-size: 1.3rem;
+                background-color: #c91d1d;
+                color: #333;
+                transition: .5s;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Animation
+
+@keyframes scaleUpDown{
+    0%, 100%{
+        transform: translateY(100px);
+    }
+    50%{
+        transform: translateY(-50px);
+    }
+}
